@@ -73,9 +73,25 @@ header {
 	font-size: 50px;
 	padding-bottom: 40px;
 	}
+#theList li {
+	padding: 1em 1em;
+	border: 1px solid black;
+	-mox-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	width: 50%;
+	margin: 0 auto;
+	background-color: #2BBBD8;
+	}
+.check {
+	opacity: .5;
+	padding-right: 10px;
+	float: left;
+	}
+.item {
+	margin: 5px 15px 0 0px;
+	font-size: 15px;
+	}
 #shoppingList {
 	padding-top: 30px;
-	}
-#Buy {
-	text-decoration: line-through;
 	}
