@@ -7,10 +7,11 @@ $(document).ready(function(){
 		console.log(item);
 		$('#theList').append('<li class="item"><input type="checkbox" class="check"><span class="item2">'+ item +'</span></li>'); 
 		$('#itemName').val("");
-				});
-	$('input.check').change(function(){
-		$('.item2').siblings().toggleClass('strike');
-	});
+
+                $('#theList li input.check').last().change(function(){
+                  $(this).siblings().toggleClass('strike');
+                });
+        });
 	
 	/* Enables Sorting of li's */
 	
@@ -19,13 +20,10 @@ $(document).ready(function(){
 		
 	/* Removes Checked Items */
 		
-	$('#remove').submit(function(event) {
-		event.preventDefault();
-		$('#theList li').each(function () {
-			if($(this).find('.item2').hasClass('strike')){
-				$(this).remove();
-				}
-		
+	$('#remove').click(function(e) {
+		e.preventDefault();
+		$('#theList li .strike').each(function () {
+                        $(this).parent().remove();
 		});
 		});
 	});
