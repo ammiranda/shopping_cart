@@ -20,13 +20,10 @@ $(document).ready(function(){
 		
 	/* Removes Checked Items */
 		
-	$('#remove').submit(function(event) {
-		event.preventDefault();
-		$('#theList li').each(function () {
-			if($(this).find('.item2').hasClass('strike')){
-				$(this).remove();
-				}
-		
+	$('#remove').click(function(e) {
+		e.preventDefault();
+		$('#theList li .strike').each(function () {
+                        $(this).parent().remove();
 		});
 		});
 	});
