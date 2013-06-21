@@ -95,3 +95,6 @@ header {
 #shoppingList {
 	padding-top: 30px;
 	}
+.strike {
+	text-decoration: line-through;
+	}
