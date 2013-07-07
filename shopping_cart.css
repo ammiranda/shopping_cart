@@ -98,3 +98,6 @@ header {
 .strike {
 	text-decoration: line-through;
 	}
+#errormsg {
+	color: red;
+	}
