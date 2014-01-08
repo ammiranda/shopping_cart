@@ -1,0 +1,1 @@
+A shopping list app I made as an assignment for the Front-End development course at [Thinkful](http://www.thinkful.com/).  The site is live at this [link](http://amiranda222.github.io/shopping_cart/).
