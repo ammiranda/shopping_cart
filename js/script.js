@@ -16,17 +16,18 @@ $(document).ready(function(){
 		var item = $('#itemName').val();  // Grabs user input from the text field and stores it in item
 		item = htmlEscape(item);          // Sanitizing user input to prevent cross site scripting
 		item = $.trim(item);  			  // Removes both beginning and trailing whitespace from the input
-		if (item == "") {
+		if (item == "") {				  // Checks if user input is simply whitespace and generates error message if true
 			$('#errormsg').show();
 			}
 		else {
-		$('#theList').append('<li class="item"><input type="checkbox" style="margin-right: 10px;"><span class="item2">'+ item +'</span></li>'); 
+		$('#theList').append('<li class="item"><input type="checkbox" style="margin-right: 10px;"><span class="item2">' + item + '</span></li>'); 
 		$('#itemName').val("");
-		$('#errormsg').hide();
+		$('#errormsg').hide();  // Hides error message upon successful input
 
-                $('#theList li input').last().change(function(){
-                  $(this).siblings().toggleClass('strike');
-                })};
+        $('#theList li input').last().change(function() {  // Function that adds strike through on checkbox click
+            $(this).siblings().toggleClass('strike');   
+                
+                });
         });
 	/* Enables Sorting of li's */
 
