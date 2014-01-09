@@ -1,4 +1,3 @@
-/* Input field appending list */
 
 function htmlEscape(str) {   			// HTML escaping function to prevent cross site scripting attacks
     return String(str)                  // Found at this link: http://stackoverflow.com/questions/1219860/html-encoding-in-javascript-jquery
@@ -7,7 +6,7 @@ function htmlEscape(str) {   			// HTML escaping function to prevent cross site 
             .replace(/'/g, '&#39;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;');
-}
+};
 
 $(document).ready(function(){
 	$('#errormsg').hide();
@@ -17,29 +16,35 @@ $(document).ready(function(){
 		item = htmlEscape(item);          // Sanitizing user input to prevent cross site scripting
 		item = $.trim(item);  			  // Removes both beginning and trailing whitespace from the input
 		if (item == "") {				  // Checks if user input is simply whitespace and generates error message if true
-			$('#errormsg').show();
-			}
+
+			$('#errormsg').show();        // Reveals the error message element to the user
+
+			 }
+
 		else {
+
 		$('#theList').append('<li class="item"><input type="checkbox" style="margin-right: 10px;"><span class="item2">' + item + '</span></li>'); 
 		$('#itemName').val("");
 		$('#errormsg').hide();  // Hides error message upon successful input
 
         $('#theList li input').last().change(function() {  // Function that adds strike through on checkbox click
+
             $(this).siblings().toggleClass('strike');   
                 
-                });
-        });
-	/* Enables Sorting of li's */
+            });
+        }
+    });
 
-	$('#theList').sortable({
-		}).disableSelection();
+	$('#theList').sortable().disableSelection();  // Enables the sorting of the list items 
 
-	/* Removes Checked Items */
+	$('#remove').click(function(e) {              // Enables users to remove checked list items
 
-	$('#remove').click(function(e) {
 		e.preventDefault();
+
 		$('#theList li .strike').each(function () {
-                        $(this).parent().remove();
-		});
+
+            $(this).parent().remove();
+
+			});
 		});
 	});
