@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
@@ -10,13 +11,21 @@
 	</title>
 </head>
 <body>
-	<div class="container">
-		<div class="form">
-			<header>Shopping List</header>
-			<p>Enter the items you want on your list!</p><br>
-			<p id="errormsg">Please enter a value!</p><br id="errormsg">
+	<div class="container col-lg-6 col-md-8 col-sm-12 col-lg-offset-3 col-md-offset-2">
+		<div class="form text-center">
+			<h1>
+				Shopping List
+			</h1>
+			<p>
+				Enter the items you want on your list!
+			</p>
+			<br>
+			<p id="errormsg">
+				Please enter a value!
+			</p>
+			<br id="errormsg">
 			<form>
-				<input id="itemName" type="text" name="item" size=40 placeholder="Enter an item">
+				<input id="itemName" type="text" name="item" size="40" placeholder="Enter an item">
 				<input type="submit" name="Submit" id="submit">
 				<input type="submit" value="Remove Checked Items" id="remove">
 			</form>
