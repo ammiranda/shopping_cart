@@ -9,11 +9,11 @@ $(document).ready(function(){
 			$('#errormsg').show();
 			}
 		else {
-		$('#theList').append('<li class="item"><input type="checkbox" class="check"><span class="item2">'+ item +'</span></li>'); 
+		$('#theList').append('<li class="item"><input type="checkbox" style="margin-right: 10px;"><span class="item2">'+ item +'</span></li>'); 
 		$('#itemName').val("");
 		$('#errormsg').hide();
 
-                $('#theList li input.check').last().change(function(){
+                $('#theList li input').last().change(function(){
                   $(this).siblings().toggleClass('strike');
                 })};
         });
