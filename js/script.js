@@ -1,11 +1,22 @@
 /* Input field appending list */
 
+function htmlEscape(str) {   			// HTML escaping function to prevent cross site scripting attacks
+    return String(str)                  // Found at this link: http://stackoverflow.com/questions/1219860/html-encoding-in-javascript-jquery
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+}
+
 $(document).ready(function(){
 	$('#errormsg').hide();
 	$('#submit').click(function(e) { 
 		e.preventDefault();
-		var item = $('#itemName').val();
-		if (item == "" || item == " ") {
+		var item = $('#itemName').val();  // Grabs user input from the text field and stores it in item
+		item = htmlEscape(item);          // Sanitizing user input to prevent cross site scripting
+		item = $.trim(item);  			  // Removes both beginning and trailing whitespace from the input
+		if (item == "") {
 			$('#errormsg').show();
 			}
 		else {
