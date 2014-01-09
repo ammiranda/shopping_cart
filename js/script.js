@@ -23,7 +23,7 @@ $(document).ready(function(){
 
 		else {
 
-		$('#theList').append('<li class="item"><input type="checkbox" style="margin-right: 10px;"><span class="item2">' + item + '</span></li>'); 
+		$('#theList').append('<li class="item"><table><tr><td><input type="checkbox" style="margin-right: 10px;"></td><td><span class="item2">' + item + '</span></td></li>'); 
 		$('#itemName').val("");
 		$('#errormsg').hide();  // Hides error message upon successful input
 
