@@ -27,9 +27,9 @@ $(document).ready(function(){
 		$('#itemName').val("");
 		$('#errormsg').hide();  // Hides error message upon successful input
 
-        $('#theList li input').last().change(function() {  // Function that adds strike through on checkbox click
+        $('#theList table tr').last().change(function() {  // Function that adds strike through on checkbox click
 
-            $(this).siblings().toggleClass('strike');   
+            $(this).children().toggleClass('strike');   
                 
             });
         }
